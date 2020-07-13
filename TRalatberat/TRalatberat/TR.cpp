@@ -113,11 +113,11 @@ void display(void)
 	glRotatef(xrot, 1, 0, 0);
     glRotatef(yrot, 0, 1, 0);
 
-	//dasar
+	//jalan
 	glBegin(GL_POLYGON);
 	glColor3f(0.6,0.6,0.6);
-	glVertex3d(-300, 0, 150);
-	glVertex3d(300,0,150);
+	glVertex3d(-300, 0, 140);
+	glVertex3d(300,0,140);
 	glVertex3d(300,0,-50);
 	glVertex3d(-300,0,-50);
 	glEnd();
@@ -126,7 +126,7 @@ void display(void)
 	glBegin(GL_POLYGON); glColor3f(0.81 , 0.71 , 0.23);
 	glVertex3f(-50, 20, 100); glVertex3f(0, 20, 100); glVertex3f(0, 20, 0);
 	glVertex3f(-50, 20, 0);	glVertex3f(-100,20,50);	glVertex3f(-100,20,100);
-	glVertex3f(-50, 20, 150); glEnd();
+	glVertex3f(-50, 20, 130); glEnd();
 		//bawahan(bemper)
 			glBegin(GL_POLYGON);
 			glColor3f(0.81 , 0.71 , 0.1);
@@ -143,16 +143,16 @@ void display(void)
 			glVertex3f(-100, 35, 100);			glVertex3f(-100, 35, 50);		glEnd();
 			//4
 			glBegin(GL_POLYGON);
-			glColor3f(0.81 , 0.71 , 0.1);	glVertex3f(-50, 20, 150);		glVertex3f(-100, 20, 100);
-			glVertex3f(-100, 35, 100);		glVertex3f(-50, 35, 150);		glEnd();
+			glColor3f(0.81 , 0.71 , 0.1);	glVertex3f(-50, 20, 130);		glVertex3f(-100, 20, 100);
+			glVertex3f(-100, 35, 100);		glVertex3f(-50, 35, 130);		glEnd();
 			//5
 			glBegin(GL_POLYGON);
-			glColor3f(0.81 , 0.71 , 0.1);	glVertex3f(-50, 20, 150);		glVertex3f(-50, 20, 100);
-			glVertex3f(-50, 35, 100);		glVertex3f(-50, 35, 150);		glEnd();
+			glColor3f(0.81 , 0.71 , 0.1);	glVertex3f(-50, 20, 130);		glVertex3f(-50, 20, 100);
+			glVertex3f(-50, 35, 100);		glVertex3f(-50, 35, 130);		glEnd();
 			//editan5
 			glBegin(GL_POLYGON);
-			glColor3f(0.81 , 0.71 , 0.1);	glVertex3f(-50, 20, 150);		glVertex3f(-20, 20, 150);
-			glVertex3f(-20, 35, 150);		glVertex3f(-50, 35, 150);		glEnd();
+			glColor3f(0.81 , 0.71 , 0.1);	glVertex3f(-50, 20, 130);		glVertex3f(-20, 20, 130);
+			glVertex3f(-20, 35, 130);		glVertex3f(-50, 35, 130);		glEnd();
 			//6
 			glBegin(GL_POLYGON);
 			glColor3f(0.81 , 0.71 , 0.1);	glVertex3f(-50, 20, 100);		glVertex3f(0, 20, 100);
@@ -165,52 +165,155 @@ void display(void)
 			glBegin(GL_POLYGON);
 			glColor3f(0.81 , 0.71 , 0.23);	glVertex3f(-50, 35, 100);		glVertex3f(0, 35, 100);
 			glVertex3f(0, 35, 0);			glVertex3f(-50, 35, 0);			glVertex3f(-100,35,50);
-			glVertex3f(-100,35,100);		glVertex3f(-50, 35, 150);		glEnd();
+			glVertex3f(-100,35,100);		glVertex3f(-50, 35, 130);		glEnd();
 //kandangmanungsa
 			//1sisi
 			glBegin(GL_POLYGON);
 			glColor3f(0.1 , 0.1 , 0.1);
-			glVertex3f(-50, 35, 150);
-			glVertex3f(-50, 35, 100);
-			glVertex3f(-50, 75, 100);
-			glVertex3f(-50, 75, 150);
+			glVertex3f(-50, 35, 130);
+			glVertex3f(-50, 35, 90);
+			glVertex3f(-50, 75, 90);
+			glVertex3f(-50, 75, 130);
 			glEnd();
 			//2sisi
 			glBegin(GL_POLYGON);
 			glColor3f(0.2 , 0.2 , 0.2);
-			glVertex3f(-50, 35, 100);
-			glVertex3f(-20, 35, 100);
-			glVertex3f(0, 50, 100);
-			glVertex3f(0, 75, 100);
-			glVertex3f(-20, 75, 100);
-			glVertex3f(-50, 75, 100);
+			glVertex3f(-50, 35, 90);
+			glVertex3f(-20, 35, 90);
+			glVertex3f(0, 50, 90);
+			glVertex3f(0, 75, 90);
+			glVertex3f(-20, 75, 90);
+			glVertex3f(-50, 75, 90);
 			glEnd();
 			//3sisi
 			glBegin(GL_POLYGON);
 			glColor3f(0.2 , 0.2 , 0.2);
-			glVertex3f(-50, 35, 150);
-			glVertex3f(-20, 35, 150);
-			glVertex3f(0, 50, 150);
-			glVertex3f(0, 75, 150);
-			glVertex3f(-20, 75, 150);		
-			glVertex3f(-50, 75, 150);
+			glVertex3f(-50, 35, 130);
+			glVertex3f(-20, 35, 130);
+			glVertex3f(0, 50, 130);
+			glVertex3f(0, 75, 130);
+			glVertex3f(-20, 75, 130);		
+			glVertex3f(-50, 75, 130);
 			glEnd();
 			//4dasar
 			glBegin(GL_POLYGON);
 			glColor3f(0.1 , 0.1 , 0.1);
-			glVertex3f(-50, 35, 150);
-			glVertex3f(-20, 35, 150);
-			glVertex3f(-20, 35, 100);		
-			glVertex3f(-50, 35, 100);
+			glVertex3f(-50, 35, 130);
+			glVertex3f(-20, 35, 130);
+			glVertex3f(-20, 35, 90);		
+			glVertex3f(-50, 35, 90);
 			glEnd();
 			//miring
 			glBegin(GL_POLYGON);
 			glColor3f(0.1 , 0.1 , 0.1);
-			glVertex3f(-20, 35, 150);
-			glVertex3f(-20, 35, 100);
-			glVertex3f(0, 50, 100);		
-			glVertex3f(0, 50, 150);
+			glVertex3f(-20, 35, 130);
+			glVertex3f(-20, 35, 90);
+			glVertex3f(0, 50, 90);		
+			glVertex3f(0, 50, 130);
 			glEnd();
+//mesin
+			//kapdepan
+			glBegin(GL_POLYGON);
+			glColor3f(0.1 , 0.1 , 0.1);
+			glVertex3f(-100, 35, 60);
+			glVertex3f(-100, 35, 90);
+			glVertex3f(-97, 75, 90);
+			glVertex3f(-97, 75, 60);
+			glEnd();
+			//monconglampu1
+			glBegin(GL_POLYGON);
+			glColor3f(0.7 , 0.6 , 0.1);
+			glVertex3f(-100, 35, 50);
+			glVertex3f(-100, 35, 60);
+			glVertex3f(-97, 60, 60);
+			glVertex3f(-97, 60, 50);
+			glEnd();
+			//sampinglampukanan
+			glBegin(GL_POLYGON);
+			glColor3f(0.7 , 0.6 , 0.4);
+			glVertex3f(-100, 35, 50);
+			glVertex3f(-97, 60, 50);
+			glVertex3f(-50, 60, 50);
+			glVertex3f(-50, 35, 50);
+			glEnd();
+			//sampinglampu1
+			glBegin(GL_POLYGON);
+			glColor3f(0.7 , 0.6 , 0.4);
+			glVertex3f(-100, 35, 59.98);
+			glVertex3f(-97, 60, 59.98);
+			glVertex3f(-50, 60, 59.98);
+			glVertex3f(-50, 35, 59.98);
+			glEnd();
+			//tutuplampu2
+			glBegin(GL_POLYGON);
+			glColor3f(0.7 , 0.6 , 0.2);
+			glVertex3f(-97, 60, 50);
+			glVertex3f(-97, 60, 60);
+			glVertex3f(-50, 60, 60);
+			glVertex3f(-50, 60, 50);
+			glEnd();
+			//monconglampu2
+			glBegin(GL_POLYGON);
+			glColor3f(0.7 , 0.6 , 0.1);
+			glVertex3f(-100, 35, 90);
+			glVertex3f(-100, 35, 100);
+			glVertex3f(-97, 60, 100);
+			glVertex3f(-97, 60, 90);
+			glEnd();
+			//sampinglampu2
+			glBegin(GL_POLYGON);
+			glColor3f(0.7 , 0.6 , 0.4);
+			glVertex3f(-100, 35, 100);
+			glVertex3f(-97, 60, 100);
+			glVertex3f(-50, 60, 100);
+			glVertex3f(-50, 35, 100);
+			glEnd();
+			//tutuplampu2
+			glBegin(GL_POLYGON);
+			glColor3f(0.7 , 0.6 , 0.2);
+			glVertex3f(-97, 60, 90);
+			glVertex3f(-97, 60, 100);
+			glVertex3f(-50, 60, 100);
+			glVertex3f(-50, 60, 90);
+			glEnd();
+
+			//tutupkapkecil
+			glBegin(GL_POLYGON);
+			glColor3f(0.6,0.6,0.6);
+			glVertex3d(-97, 75, 60);
+			glVertex3d(-97,75,90);
+			glVertex3d(-94,80,90);
+			glVertex3d(-94,80,60);
+			glEnd();
+			//tutupkap
+			glBegin(GL_POLYGON);
+			glColor3f(0.6,0.6,0.9);
+			glVertex3d(-94,80,60);
+			glVertex3d(-94,80,90);
+			glVertex3d(0,85,90);
+			glVertex3d(0,85,60);
+			glEnd();
+			//tutupsampingmesin
+			glBegin(GL_POLYGON);
+			glColor3f(0.81 , 0.71 , 0.1);
+			glVertex3f(-100, 35, 89.99);
+			glVertex3f(-97, 75, 89.99);
+			glVertex3f(-94,80,89.99);
+			glVertex3f(0,85,89.99);
+			glVertex3f(0,35,89.99);
+			glEnd();
+			//tutusampingmesinkiri
+			glBegin(GL_POLYGON);
+			glColor3f(0.81 , 0.71 , 0.1);
+			glVertex3f(-100, 35, 59.99);
+			glVertex3f(-97, 75, 59.99);
+			glVertex3f(-94,80,59.99);
+			glVertex3f(0,85,59.99);
+			glVertex3f(0,35,59.99);
+
+			glEnd();
+
+
 
 
 
