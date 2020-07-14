@@ -608,6 +608,75 @@ void display(void)
 			glVertex3f(45, 35, 0);		
 			glVertex3f(45, 20, 0);
 			glEnd();
+//EXTENDSIONS
+			
+			glBegin(GL_QUADS);
+			//dasar
+			glColor3f(0.6 , 0.6 , 0.6);
+			glVertex3f(0, 20, 50);
+			glVertex3f(50, 20, 50);
+			glVertex3f(50, 20, 100);		
+			glVertex3f(0, 20, 100);
+			//depan
+			glColor3f(0.5 , 0.5 , 0.5);
+			glVertex3f(0.1, 20, 50);
+			glVertex3f(0.1, 75, 50);
+			glVertex3f(0.1, 75, 100);		
+			glVertex3f(0.1, 20, 100);
+			//belakang
+			glColor3f(0.5 , 0.5 , 0.5);
+			glVertex3f(49.9, 20, 50);
+			glVertex3f(49.9, 75, 50);
+			glVertex3f(49.9, 75, 100);		
+			glVertex3f(49.9, 20, 100);
+			//sampingkiri
+			glColor3f(0.6 , 0.6 , 0.6);
+			glVertex3f(0, 20, 100);
+			glVertex3f(50, 20, 100);
+			glVertex3f(50, 75, 100);		
+			glVertex3f(0, 75, 100);
+			//sampingkanan
+			glColor3f(0.6 , 0.6 , 0.6);
+			glVertex3f(0, 20, 50);
+			glVertex3f(50, 20, 50);
+			glVertex3f(50, 75, 50);		
+			glVertex3f(0, 75, 50);
+			//coveratasroda
+			glColor3f(0.6 , 0.6 , 0.6);
+			glVertex3f(0, 50, 0);
+			glVertex3f(50, 50, 0);
+			glVertex3f(50, 50, 130);		
+			glVertex3f(0, 50, 130);
+			//
+			glColor3f(0.6 , 0.6 , 0.6);
+			glVertex3f(0, 75, 0);
+			glVertex3f(50, 75, 0);
+			glVertex3f(50, 75, 130);		
+			glVertex3f(0, 75, 130);
+			//tutupsamping
+			glColor3f(0.5 , 0.5 , 0.5);
+			glVertex3f(0, 50, 130);
+			glVertex3f(50, 50, 130);
+			glVertex3f(50, 75, 130);		
+			glVertex3f(0, 75, 130);
+			glColor3f(0.5 , 0.5 , 0.5);
+			glVertex3f(0, 50, 0);
+			glVertex3f(50, 50, 0);
+			glVertex3f(50, 75, 0);		
+			glVertex3f(0, 75, 0);
+			//tutupmesinsamping
+			glColor3f(0.8 , 0 , 0);
+			glVertex3f(-50, 75, 0);
+			glVertex3f(0, 75, 0);
+			glVertex3f(0, 75, 60);		
+			glVertex3f(-50, 75, 60);
+			//tutupbelakang
+			glColor3f(0.8 , 0 , 0);
+			glVertex3f(50, 50, 0);
+			glVertex3f(50, 75, 0);
+			glVertex3f(50, 75, 130);		
+			glVertex3f(50, 50, 130);
+			glEnd();
 
 			
 
