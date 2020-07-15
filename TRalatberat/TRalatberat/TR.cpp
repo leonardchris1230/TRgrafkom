@@ -15,7 +15,7 @@ void Myinit(void);
 void display(void);
 void keyboard(unsigned char, int, int);
 void reshp(int, int);
-
+int i;
 int is_depth;
 
 void mouseButton(int button, int state, int x, int y) {
@@ -413,13 +413,16 @@ void display(void)
 //bandepan
 		//bankiri 
 			//ban
+					for (int i=0;i<50;i++)
+					{
 					glBegin(GL_POLYGON);
 					glColor3f(0.1 , 0.1 , 0.1);
-					glVertex3f(-10, 35, 130);			glVertex3f(5, 45, 130);
-					glVertex3f(25, 45, 130);			glVertex3f(40, 35, 130);
-					glVertex3f(40, 0, 130);				glVertex3f(25, -15, 130);		
-					glVertex3f(5, -15, 130);			glVertex3f(-10, 0, 130);
+					glVertex3f(-10, 35, 90+i);			glVertex3f(5, 45, 90+i);
+					glVertex3f(25, 45, 90+i);			glVertex3f(40, 35, 90+i);
+					glVertex3f(40, 0, 90+i);				glVertex3f(25, -15, 90+i);		
+					glVertex3f(5, -15, 90+i);			glVertex3f(-10, 0, 90+i);
 					glEnd();
+					}
 
 			//velg
 					//slebordepan
@@ -464,6 +467,7 @@ void display(void)
 					glVertex3f(45, 20, 100);
 					glEnd();
 	//ban kanan
+			
 			glBegin(GL_POLYGON);
 			glColor3f(0.6 , 0.6 , 0.6);
 			glVertex3f(-20, 20, 50);
@@ -472,17 +476,20 @@ void display(void)
 			glVertex3f(-20, 20, 0);
 			glEnd();
 			//ban
+					for(int i=0; i<50;i++)
+					{
 					glBegin(GL_POLYGON);
 					glColor3f(0.1 , 0.1 , 0.1);
-					glVertex3f(-10, 35, 0);
-					glVertex3f(5, 45, 0);
-					glVertex3f(25, 45, 0);
-					glVertex3f(40, 35, 0);
-					glVertex3f(40, 0, 0);
-					glVertex3f(25, -15, 0);
-					glVertex3f(5, -15, 0);
-					glVertex3f(-10, 0, 0);
+					glVertex3f(-10, 35, 0+i);
+					glVertex3f(5, 45, 0+i);
+					glVertex3f(25, 45, 0+i);
+					glVertex3f(40, 35, 0+i);
+					glVertex3f(40, 0, 0+i);
+					glVertex3f(25, -15, 0+i);
+					glVertex3f(5, -15, 0+i);
+					glVertex3f(-10, 0, 0+i);
 					glEnd();
+					}
 			//miring1
 			glBegin(GL_POLYGON);
 			glColor3f(0.6 , 0.6 , 0.5);
@@ -590,20 +597,23 @@ void display(void)
 //
 //
 //
-//				THE SHREDDER PART			
+//				back machine PART			
 //
 //
 //
 /////////////////////////////////////////
 		//bankiri 
 			//ban
+					for(int i =0 ;i<50;i++)
+					{
 					glBegin(GL_POLYGON);
 					glColor3f(0.1 , 0.1 , 0.1);
-					glVertex3f(290, 35, 130);			glVertex3f(305, 45, 130);
-					glVertex3f(325, 45, 130);			glVertex3f(340, 35, 130);
-					glVertex3f(340, 0, 130);			glVertex3f(325, -15, 130);		
-					glVertex3f(305, -15, 130);			glVertex3f(290, 0, 130);
+					glVertex3f(290, 35, 90+i);			glVertex3f(305, 45, 90+i);
+					glVertex3f(325, 45, 90+i);			glVertex3f(340, 35, 90+i);
+					glVertex3f(340, 0, 90+i);			glVertex3f(325, -15, 90+i);		
+					glVertex3f(305, -15, 90+i);			glVertex3f(290, 0, 90+i);
 					glEnd();
+					}
 
 			//velg
 					//slebordepan
@@ -648,15 +658,18 @@ void display(void)
 					glVertex3f(345, 20, 100);
 					glEnd();
 	//ban kanan
+					
 			//ban
+					for(int i =0 ;i<50;i++)
+					{
 					glBegin(GL_POLYGON);
 					glColor3f(0.1 , 0.1 , 0.1);
-					glVertex3f(290, 35, 0);			glVertex3f(305, 45, 0);
-					glVertex3f(325, 45, 0);			glVertex3f(340, 35, 0);
-					glVertex3f(340, 0, 0);			glVertex3f(325, -15, 0);		
-					glVertex3f(305, -15, 0);			glVertex3f(320, 0, 0);
+					glVertex3f(290, 35, 0+i);			glVertex3f(305, 45, 0+i);
+					glVertex3f(325, 45, 0+i);			glVertex3f(340, 35, 0+i);
+					glVertex3f(340, 0, 0+i);			glVertex3f(325, -15, 0+i);		
+					glVertex3f(305, -15, 0+i);			glVertex3f(290, 0, 0+i);
 					glEnd();
-
+					}
 			//velg
 					//slebordepan
 					glBegin(GL_POLYGON);
@@ -726,6 +739,93 @@ void display(void)
 			glVertex3f(280, 90, 100);		
 			glVertex3f(280, 90, 30);
 			glEnd();
+			//samping
+			glBegin(GL_POLYGON);
+			glColor3f(0.81 , 0.71 , 0.0);
+			glVertex3f(280, 90, 100);
+			glVertex3f(350, 80, 100);
+			glVertex3f(350, 20, 100);	
+			glVertex3f(300, 20, 100);
+			glEnd();
+			glBegin(GL_POLYGON);
+			glColor3f(0.81 , 0.71 , 0.0);
+			glVertex3f(280, 90, 30);
+			glVertex3f(350, 80, 30);
+			glVertex3f(350, 20, 30);	
+			glVertex3f(300, 20, 30);
+			glEnd();
+//MachineExtras
+			//pipeDASAR
+			glBegin(GL_POLYGON);
+			glColor3f(0,0,0);
+			glVertex3f(330, 84, 40 );
+			glVertex3f(340, 82.5, 40);
+			glVertex3f(340, 82.5, 50);	
+			glVertex3f(330, 84, 50);
+			glEnd();
+			//side
+			//front
+			glBegin(GL_QUADS);
+			glColor3f(0.1,0.1,0.1);
+			glVertex3f(330, 84, 40 );
+			glVertex3f(330, 120, 40);
+			glVertex3f(330, 120, 50);	
+			glVertex3f(330, 84, 50);
+			//back
+			glColor3f(0.1,0.1,0.1);
+			glVertex3f(340, 82.5, 40 );
+			glVertex3f(340, 115, 40);
+			glVertex3f(340, 115, 50);	
+			glVertex3f(340, 82.5, 50);
+			//sides
+			glColor3f(0,0,0);
+			glVertex3f(330, 84, 40 );
+			glVertex3f(340, 82.5, 40);
+			glVertex3f(340, 115, 40);	
+			glVertex3f(330, 120, 40);
+			glColor3f(0,0,0);
+			glVertex3f(330, 84, 50 );
+			glVertex3f(340, 82.5, 50);
+			glVertex3f(340, 115, 50);	
+			glVertex3f(330, 120, 50);
+			glEnd();
+/////////////////////////////////////////
+//
+//
+//
+//
+//				THE SHREDDER PART			
+//
+//
+//
+/////////////////////////////////////////
+			//dasar
+			glBegin(GL_QUADS);
+			glColor3f(0.81 , 0.71 , 0.1);
+			glVertex3f(80, 0, 0);
+			glVertex3f(250, -10, 0);
+			glVertex3f(250, -10, 130);
+			glVertex3f(80, 0, 130);
+			//belakang
+			glColor3f(0.81 , 0.71 , 0.3);
+			glVertex3f(250, -10, 0);
+			glVertex3f(290, 50, 0);
+			glVertex3f(290, 50, 130);
+			glVertex3f(250, -10, 130);
+			//samping
+			glColor3f(0.81 , 0.71 , 0.5);
+			glVertex3f(70, 60, 130);
+			glVertex3f(290, 50, 130);
+			glVertex3f(250, -10, 130);
+			glVertex3f(80, 0, 130);
+			glColor3f(0.81 , 0.71 , 0.6);
+			glVertex3f(70, 60, 0);
+			glVertex3f(290, 50, 0);
+			glVertex3f(250, -10, 0);
+			glVertex3f(80, 0, 0);
+			glEnd();
+			
+
 
 	
 	glPopMatrix();
