@@ -10,6 +10,14 @@ float yrot = 0;
 float xdiff = 0;
 float ydiff = 0;
 bool mousedown = false;
+void frontBody(void);
+void ControlCenter(void);
+void TractorMachine(void);
+void SideMachine(void);
+void frontWheels(void);
+void TractorMachineExtensions(void);
+void ShredderMachine(void);
+void GateControl(void);
 
 void Myinit(void);
 void display(void);
@@ -101,19 +109,9 @@ void keyboard(unsigned char key, int x, int y)
     display();
 }
 
-void display(void)
+void frontBody(void)
 {
-	
-    if (is_depth)
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    else
-    glClear(GL_COLOR_BUFFER_BIT);
-	glPushMatrix();
-
-	glRotatef(xrot, 1, 0, 0);
-    glRotatef(yrot, 0, 1, 0);
-
-	//jalan
+//jalan
 	//glBegin(GL_POLYGON);
 	glColor3f(0.6,0.6,0.6);
 	glVertex3d(-300, 0, 140);
@@ -177,8 +175,10 @@ void display(void)
 			glColor3f(0.81 , 0.71 , 0.1);	glVertex3f(0, 35, 50);	glVertex3f(0, 35, 100);
 			glVertex3f(0,85,59.99); glVertex3f(0,35,59.99);
 			//glEnd();
-
-//kandangmanungsa
+}
+void ControlCenter(void)
+{
+	//kandangmanungsa
 		//1 sisi
 			glBegin(GL_POLYGON);
 			glColor3f(0.1 , 0.1 , 0.1);
@@ -293,40 +293,9 @@ void display(void)
 				glVertex3f(-50, 130, 90);	glVertex3f(-50, 130, 130);
 				glVertex3f(0, 130, 130);	glVertex3f(0, 130, 90);
 				glEnd();
-//
-//mesinsamping
-//			//1sisi
-			glBegin(GL_POLYGON);
-			glColor3f(0.81 , 0.7 , 0.0);
-			glVertex3f(-50, 35, 59.9);	glVertex3f(-50, 35, 0);
-			glVertex3f(-50, 75, 0); 	glVertex3f(-50, 75, 59.9);
-			glEnd();
-			//2sisi
-			glBegin(GL_POLYGON);
-			glColor3f(0.81 , 0.7 , 0.0);
-			glVertex3f(-50, 35, 0); 	glVertex3f(-20, 35, 0);
-			glVertex3f(0, 50, 0);		glVertex3f(0, 75, 0);
-			glVertex3f(-20, 75, 0);		glVertex3f(-50, 75, 0);
-			glEnd();
-			//3sisi
-			glBegin(GL_POLYGON);
-			glColor3f(0.81 , 0.7 , 0.0);
-			glVertex3f(-50, 35, 59.9);	glVertex3f(-20, 35, 59.9);
-			glVertex3f(0, 50, 59.9);	glVertex3f(0, 75, 59.9);
-			glVertex3f(-20, 75, 59.9);	glVertex3f(-50, 75, 59.9);	
-			glEnd();
-			//4dasar
-			glBegin(GL_POLYGON);
-			glColor3f(0.81 , 0.7 , 0.3);
-			glVertex3f(-50, 35, 59.9);	glVertex3f(-20, 35, 59.9);
-			glVertex3f(-20, 35, 0);		glVertex3f(-50, 35, 0);
-			glEnd();
-			//miring
-			glBegin(GL_POLYGON);
-			glColor3f(0.81 , 0.7 , 0.0);
-			glVertex3f(-20, 35, 59.9);	glVertex3f(-20, 35, 0);
-			glVertex3f(0, 50, 0);		glVertex3f(0, 50, 59.9);
-			glEnd();
+}
+void TractorMachine(void)
+{
 //mesin
 			//kapdepan
 			glBegin(GL_POLYGON);
@@ -385,7 +354,7 @@ void display(void)
 			glEnd();
 			//tutupkap
 			glBegin(GL_POLYGON);
-			glColor3f(0.81 , 0.7 , 0.3);
+			glColor3f(0.81 , 0.7 , 0.4);
 			glVertex3d(-94,80,60);			glVertex3d(-94,80,90);
 			glVertex3d(0,85,90);			glVertex3d(0,85,60);
 			glEnd();
@@ -405,7 +374,48 @@ void display(void)
 			
 			
 
+}
+void SideMachine(void)
+{
+//
+//SideMachine
+//			//1sisi
+			glBegin(GL_POLYGON);
+			glColor3f(0.81 , 0.7 , 0.0);
+			glVertex3f(-50, 35, 59.9);	glVertex3f(-50, 35, 0);
+			glVertex3f(-50, 75, 0); 	glVertex3f(-50, 75, 59.9);
+			glEnd();
+			//2sisi
+			glBegin(GL_POLYGON);
+			glColor3f(0.81 , 0.7 , 0.0);
+			glVertex3f(-50, 35, 0); 	glVertex3f(-20, 35, 0);
+			glVertex3f(0, 50, 0);		glVertex3f(0, 75, 0);
+			glVertex3f(-20, 75, 0);		glVertex3f(-50, 75, 0);
+			glEnd();
+			//3sisi
+			glBegin(GL_POLYGON);
+			glColor3f(0.81 , 0.7 , 0.0);
+			glVertex3f(-50, 35, 59.9);	glVertex3f(-20, 35, 59.9);
+			glVertex3f(0, 50, 59.9);	glVertex3f(0, 75, 59.9);
+			glVertex3f(-20, 75, 59.9);	glVertex3f(-50, 75, 59.9);	
+			glEnd();
+			//4dasar
+			glBegin(GL_POLYGON);
+			glColor3f(0.81 , 0.7 , 0.4);
+			glVertex3f(-50, 35, 59.9);	glVertex3f(-20, 35, 59.9);
+			glVertex3f(-20, 35, 0);		glVertex3f(-50, 35, 0);
+			glEnd();
+			//miring
+			glBegin(GL_POLYGON);
+			glColor3f(0.81 , 0.7 , 0.0);
+			glVertex3f(-20, 35, 59.9);	glVertex3f(-20, 35, 0);
+			glVertex3f(0, 50, 0);		glVertex3f(0, 50, 59.9);
+			glEnd();
 
+
+}
+void frontWheels(void)
+{
 //bandepan
 		//bankiri 
 			//ban
@@ -518,6 +528,9 @@ void display(void)
 			glVertex3f(45, 35, 0);		
 			glVertex3f(45, 20, 0);
 			glEnd();
+}
+void TractorMachineExtensions(void)
+{
 //EXTENDSIONS
 			
 			glBegin(GL_QUADS);
@@ -546,19 +559,19 @@ void display(void)
 			glVertex3f(50, 75, 100);		
 			glVertex3f(0, 75, 100);
 			//sampingkanan
-			glColor3f(0.81 , 0.7 , 0.0);
+			glColor3f(0.81 , 0.7 , 0.4);
 			glVertex3f(0, 20, 50);
 			glVertex3f(50, 20, 50);
 			glVertex3f(50, 75, 50);		
 			glVertex3f(0, 75, 50);
 			//coveratasroda
-			glColor3f(0.81 , 0.7 , 0.3);
+			glColor3f(0.81 , 0.7 , 0.4);
 			glVertex3f(0, 50, 0);
 			glVertex3f(50, 50, 0);
 			glVertex3f(50, 50, 130);		
 			glVertex3f(0, 50, 130);
 			//
-			glColor3f(0.81 , 0.7 , 0.0);
+			glColor3f(0.81 , 0.7 , 0.4);
 			glVertex3f(0, 75, 0);
 			glVertex3f(50, 75, 0);
 			glVertex3f(50, 75, 130);		
@@ -574,31 +587,23 @@ void display(void)
 			glVertex3f(50, 50, 0);
 			glVertex3f(50, 75, 0);		
 			glVertex3f(0, 75, 0);
-			//tutupmesinsamping
-			glColor3f(0.81 , 0.7 , 0.3);
+			//tutupSideMachine
+			glColor3f(0.81 , 0.7 , 0.4);
 			glVertex3f(-50, 75, 0);
 			glVertex3f(0, 75, 0);
 			glVertex3f(0, 75, 60);		
 			glVertex3f(-50, 75, 60);
 			//tutupbelakang
-			glColor3f(0.81 , 0.7 , 0.3);
+			glColor3f(0.81 , 0.7 , 0.0);
 			glVertex3f(50, 50, 0);
 			glVertex3f(50, 75, 0);
 			glVertex3f(50, 75, 130);		
 			glVertex3f(50, 50, 130);
 			glEnd();
-
-/////////////////////////////////////////
-//
-//
-//
-//
-//				back machine PART			
-//
-//
-//
-/////////////////////////////////////////
-		//bankiri 
+}
+void BackWheels(void)
+{
+//bankiri 
 			//ban
 					for(int i =0 ;i<50;i++)
 					{
@@ -708,6 +713,9 @@ void display(void)
 					glVertex3f(345, 35, 0);		
 					glVertex3f(345, 20, 0);
 					glEnd();
+}
+void ShredderMachine(void)
+{
 //machineChasis
 			glBegin(GL_QUADS);
 			//dasar
@@ -751,7 +759,7 @@ void display(void)
 			glVertex3f(300, 20, 30);
 			glEnd();
 //MachineExtras
-			//pipeDASAR
+	//pipeDASAR
 			glBegin(GL_POLYGON);
 			glColor3f(0,0,0);
 			glVertex3f(330, 84, 40 );
@@ -843,40 +851,43 @@ void display(void)
 			glVertex3f(250, -10, 0);
 			glVertex3f(80, -10, 0);
 			glEnd();
+}
+void GateControl(void)
+{
 //mesinkatup
 		
 			//dasar
 			glBegin(GL_QUADS);
-			glColor3f(0.81 , 0.71 , 0.3);
+			glColor3f(0.81 , 0.71 , 0.0);
 			glVertex3f(0, 75.1, 0);
 			glVertex3f(50, 75.1, 0);
 			glVertex3f(50, 75.1, 90);
 			glVertex3f(0, 75.1, 90);
 			//depan
-			glColor3f(0.81 , 0.71 , 0.2);
+			glColor3f(0.81 , 0.71 , 0.0);
 			glVertex3f(0, 75.1, 0);
 			glVertex3f(0, 100, 0);
 			glVertex3f(0, 100, 90);
 			glVertex3f(0, 75.1, 90);
 			//belakang
-			glColor3f(0.81 , 0.71 , 0.2);
+			glColor3f(0.81 , 0.71 , 0.0);
 			glVertex3f(50, 75.1, 0);
 			glVertex3f(50, 100, 0);
 			glVertex3f(50, 100, 90);
 			glVertex3f(50, 75.1, 90);
 			//samping
-			glColor3f(0.81 , 0.71 , 0.1);
+			glColor3f(0.81 , 0.71 , 0.0);
 			glVertex3f(0, 75.1, 0);
 			glVertex3f(50, 75.1, 0);
 			glVertex3f(50, 100, 0);
 			glVertex3f(0, 100, 0);
-			glColor3f(0.81 , 0.71 , 0.2);
+			glColor3f(0.81 , 0.71 , 0.0);
 			glVertex3f(0, 75.1, 90);
 			glVertex3f(50, 75.1, 90);
 			glVertex3f(50, 100, 90);
 			glVertex3f(0, 100, 90);
 			//tutup
-			glColor3f(0.81 , 0.71 , 0.3);
+			glColor3f(0.81 , 0.71 , 0.4);
 			glVertex3f(0, 100, 0);
 			glVertex3f(50, 100, 0);
 			glVertex3f(50, 100, 90);
@@ -885,7 +896,7 @@ void display(void)
 //tuastutupatas
 			//1
 			glBegin(GL_QUADS);
-			glColor3f(0.81 , 0.7 , 0.3);
+			glColor3f(0.81 , 0.7 , 0.4);
 			glVertex3f(0, 100, 60);
 			glVertex3f(0, 100, 90);
 			glVertex3f(10, 120, 90);
@@ -926,6 +937,81 @@ void display(void)
 			glVertex3f(95, 80, 70);
 			glVertex3f(95, 80, 60);
 			glEnd();
+	//Extension Single Part top part
+			glBegin(GL_QUADS);
+			glColor3f(0.81 , 0.7 , 0.4);
+			glVertex3f(65, 140, 70);
+			glVertex3f(65, 140, 80);
+			glVertex3f(85, 170, 80);
+			glVertex3f(85, 170, 70);
+			glColor3f(0.81 , 0.7 , 0.4);
+			glVertex3f(85, 170, 70);
+			glVertex3f(85, 170, 80);
+			glVertex3f(95, 175, 80);
+			glVertex3f(95, 175, 70);
+			glColor3f(0.81 , 0.7 , 0.4);
+			glVertex3f(95, 175, 70);
+			glVertex3f(95, 175, 80);
+			glVertex3f(110, 165, 80);
+			glVertex3f(110, 165, 70);
+			//
+			glColor3f(0.81 , 0.7 , 0.4);
+			glVertex3f(110, 165, 70);
+			glVertex3f(110, 165, 80);
+			glVertex3f(120, 150, 80);
+			glVertex3f(120, 150, 70);
+			//
+			glColor3f(0.81 , 0.7 , 0.4);
+			glVertex3f(120, 150, 70);
+			glVertex3f(120, 150, 80);
+			glVertex3f(125, 90, 80);
+			glVertex3f(125, 90, 70);
+			glEnd();
+//Extension Single Part bot part
+			glBegin(GL_QUADS);
+			glColor3f(0.81 , 0.7 , 0.4);
+			glVertex3f(80, 100, 70);
+			glVertex3f(80, 100, 80);
+			glVertex3f(95, 115, 80);
+			glVertex3f(95, 115, 70);
+			//
+			glVertex3f(95, 115, 70);
+			glVertex3f(95, 115, 80);
+			glVertex3f(105, 125, 80);
+			glVertex3f(105, 125, 70);
+			//
+			glVertex3f(105, 125, 70);
+			glVertex3f(105, 125, 80);
+			glVertex3f(110, 90, 80);
+			glVertex3f(110, 90, 70);
+			glEnd();
+//sideCover for extension part
+			glBegin(GL_POLYGON);
+			glColor3f(0.81 , 0.7 , 0.0);
+			glVertex3f(105, 125, 80);
+			glVertex3f(80, 100, 80);
+			glVertex3f(65, 140, 80);
+			glVertex3f(85, 170, 80);
+			glVertex3f(95, 175, 80);
+			glVertex3f(110, 165, 80);
+			glVertex3f(120, 150, 80);
+			glVertex3f(125, 90, 80);
+			glVertex3f(110, 90, 80);
+			glEnd();
+			//OTHERSIDE
+			glBegin(GL_POLYGON);
+			glColor3f(0.81 , 0.7 , 0.0);
+			glVertex3f(105, 125, 70);
+			glVertex3f(80, 100, 70);
+			glVertex3f(65, 140, 70);
+			glVertex3f(85, 170, 70);
+			glVertex3f(95, 175, 70);
+			glVertex3f(110, 165, 70);
+			glVertex3f(120, 150, 70);
+			glVertex3f(125, 90, 70);
+			glVertex3f(110, 90, 70);
+			glEnd();
+
 //tuastutupbawah
 			//1
 			glBegin(GL_QUADS);
@@ -1052,10 +1138,31 @@ void display(void)
 				glVertex3f(95,80, -5);
 				glVertex3f(75, 80, -5);
 				glEnd();
-			
-
-
+}
+ 
+void display(void)
+{
 	
+    if (is_depth)
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    else
+    glClear(GL_COLOR_BUFFER_BIT);
+	glPushMatrix();
+	glRotatef(xrot, 1, 0, 0);
+    glRotatef(yrot, 0, 1, 0);
+
+	//call part func
+	frontBody();
+	ControlCenter();
+	TractorMachine();
+	SideMachine();
+	frontWheels();
+	TractorMachineExtensions();
+
+	BackWheels();
+	ShredderMachine();
+	GateControl();
+
 	glPopMatrix();
     glutSwapBuffers();
 }

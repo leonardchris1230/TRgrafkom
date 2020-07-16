@@ -1,4 +1,4 @@
-﻿Build started 7/16/2020 9:02:40 AM.
+﻿Build started 7/16/2020 4:47:55 PM.
      1>Project "C:\Users\ASUS\Documents\GitHub\TRgrafkom\TRalatberat\TRalatberat\TRalatberat.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\TRalatberat.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -18,4 +18,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.29
+Time Elapsed 00:00:01.20
