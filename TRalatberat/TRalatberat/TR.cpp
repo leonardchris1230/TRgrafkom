@@ -19,12 +19,31 @@ void TractorMachineExtensions(void);
 void ShredderMachine(void);
 void GateControl(void);
 
+//diffuse light color variables
+GLfloat dlr = 1.0;
+GLfloat dlg = 1.0;
+GLfloat dlb = 1.0;
+
+//ambient light color variables
+GLfloat alr = 1.0;
+GLfloat alg = 1.0;
+GLfloat alb = 1.0;
+
+//light position variables
+GLfloat lx = 0.0;
+GLfloat ly = 0.0;
+GLfloat lz = 1.0;
+GLfloat lw = 0.0;
+
+
 void Myinit(void);
 void display(void);
 void keyboard(unsigned char, int, int);
 void reshp(int, int);
 int i;
 int is_depth;
+
+
 
 void mouseButton(int button, int state, int x, int y) {
     if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
@@ -56,20 +75,22 @@ void reshp(int lebar, int tinggi)
 void Myinit(void)
 {
 	glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glDepthFunc(GL_LEQUAL);
     glShadeModel(GL_SMOOTH);
     glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
     glClearColor(1,1,1, 0.0);
     glEnable(GL_DEPTH_TEST);
     is_depth = 1;
-    glMatrixMode(GL_MODELVIEW);
+
+
     
 }
 void keyboard(unsigned char key, int x, int y)
 {
-    switch (key)
-    {
+    switch (key){
+    
+	   
 		case 'q':
     case 'Q':
         glTranslatef(0.0, 0.0, -3.0);
@@ -1011,6 +1032,93 @@ void GateControl(void)
 			glVertex3f(125, 90, 70);
 			glVertex3f(110, 90, 70);
 			glEnd();
+//pistonPart
+			//FRONT
+			glBegin(GL_QUADS);
+			glColor3f(0.6,0.6,0.6);
+			glVertex3f(111, 100, 70);
+			glVertex3f(111, 100, 80);
+			glVertex3f(111, 70, 80);
+			glVertex3f(111, 70, 70);
+			//BACK
+			glVertex3f(120, 100, 70);
+			glVertex3f(120, 100, 80);
+			glVertex3f(120, 70, 80);
+			glVertex3f(120, 70, 70);
+			//side
+			glColor3f(0.5,0.5,0.5);
+			glVertex3f(111, 100, 71);
+			glVertex3f(120, 100, 71);
+			glVertex3f(120, 70, 71);
+			glVertex3f(111, 70, 71);
+			//side
+			glColor3f(0.5,0.5,0.5);
+			glVertex3f(111, 100, 79);
+			glVertex3f(120, 100, 79);
+			glVertex3f(120, 70, 79);
+			glVertex3f(111, 70, 79);
+			glEnd();
+//gatePart
+			//top part
+			glBegin(GL_QUADS);
+			glColor3f(0.81 , 0.7 , 0.4);
+			glVertex3f(100, 70, 1);
+			glVertex3f(100, 70, 129);
+			glVertex3f(130, 70, 129);
+			glVertex3f(130, 70, 1);
+			
+	//curved-like back part 1
+			glColor3f(0.81 , 0.7 , 0);
+			glVertex3f(130, 70, 1);
+			glVertex3f(130, 70, 129);
+			glVertex3f(120, 50, 129);
+			glVertex3f(120, 50, 1);
+			//2
+			glColor3f(0.81 , 0.7 , 0.3);
+			glVertex3f(120, 50, 1);
+			glVertex3f(120, 50, 129);
+			glVertex3f(122, 30, 129);
+			glVertex3f(122, 30, 1);
+			//3
+			glColor3f(0.81 , 0.7 , 0.4);
+			glVertex3f(122, 30, 1);
+			glVertex3f(122, 30, 129);
+			glVertex3f(135, 20, 129);
+			glVertex3f(135, 20, 1);
+			//4
+			glVertex3f(135, 20, 1);
+			glVertex3f(135, 20, 129);
+			glVertex3f(150, 5, 129);
+			glVertex3f(150, 5, 1);
+			glEnd();
+//curved-like front part 2
+			glBegin(GL_QUADS);
+			glColor3f(0.81 , 0.7 , 0);
+			glVertex3f(100, 70, 1);
+			glVertex3f(100, 70, 129);
+			glVertex3f(100, 50, 129);
+			glVertex3f(100, 50, 1);
+			//2
+			glVertex3f(100, 50, 1);
+			glVertex3f(100, 50, 129);
+			glVertex3f(110, 30, 129);
+			glVertex3f(110, 30, 1);
+			//3
+			glColor3f(0.81 , 0.7 , 0.4);
+			glVertex3f(110, 30, 1);
+			glVertex3f(110, 30, 129);
+			glVertex3f(115, 15, 129);
+			glVertex3f(115, 15, 1);
+			//4
+			glVertex3f(115, 15, 1);
+			glVertex3f(115, 15, 129);
+			glVertex3f(150, 5, 129);
+			glVertex3f(150, 5, 1);
+			glEnd();
+
+			
+			 
+
 
 //tuastutupbawah
 			//1
@@ -1147,9 +1255,11 @@ void display(void)
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     else
     glClear(GL_COLOR_BUFFER_BIT);
+
 	glPushMatrix();
 	glRotatef(xrot, 1, 0, 0);
     glRotatef(yrot, 0, 1, 0);
+
 
 	//call part func
 	frontBody();
