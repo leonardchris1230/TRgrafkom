@@ -9,6 +9,7 @@ float xrot = 0;
 float yrot = 0;
 float xdiff = 0;
 float ydiff = 0;
+
 bool mousedown = false;
 void frontBody(void);
 void ControlCenter(void);
@@ -18,23 +19,7 @@ void frontWheels(void);
 void TractorMachineExtensions(void);
 void ShredderMachine(void);
 void GateControl(void);
-
-//diffuse light color variables
-GLfloat dlr = 1.0;
-GLfloat dlg = 1.0;
-GLfloat dlb = 1.0;
-
-//ambient light color variables
-GLfloat alr = 1.0;
-GLfloat alg = 1.0;
-GLfloat alb = 1.0;
-
-//light position variables
-GLfloat lx = 0.0;
-GLfloat ly = 0.0;
-GLfloat lz = 1.0;
-GLfloat lw = 0.0;
-
+void Extras(void);
 
 void Myinit(void);
 void display(void);
@@ -1115,6 +1100,31 @@ void GateControl(void)
 			glVertex3f(150, 5, 129);
 			glVertex3f(150, 5, 1);
 			glEnd();
+//curved-like side part 
+			glBegin(GL_POLYGON);
+			glColor3f(0.81 , 0.7 , 0);
+			glVertex3f(100, 70, 129);
+			glVertex3f(130, 70, 129);
+			glVertex3f(120, 50, 129);
+			glVertex3f(122, 30, 129);
+			glVertex3f(150, 5, 129);
+			glVertex3f(115, 15, 129);
+			glVertex3f(110, 30, 129);
+			glVertex3f(100, 50, 129);
+			glEnd();
+			//other side
+			glBegin(GL_POLYGON);
+			glColor3f(0.81 , 0.7 , 0);
+			glVertex3f(100, 70, 1);
+			glVertex3f(130, 70, 1);
+			glVertex3f(120, 50, 1);
+			glVertex3f(122, 30, 1);
+			glVertex3f(150, 5, 1);
+			glVertex3f(115, 15, 1);
+			glVertex3f(110, 30, 1);
+			glVertex3f(100, 50, 1);
+			glEnd();
+
 
 			
 			 
@@ -1247,7 +1257,132 @@ void GateControl(void)
 				glVertex3f(75, 80, -5);
 				glEnd();
 }
- 
+void Extras(void)
+{
+	//dasar kursi
+			glBegin(GL_POLYGON);
+			glColor3f(0.5 , 0.5 , 0.5);
+			glVertex3f(-30, 60, 120);	glVertex3f(-30, 60, 100);
+			glVertex3f(-10, 60, 100);		glVertex3f(-10, 60, 120);
+			glEnd();
+	//punggung kursi
+			glBegin(GL_POLYGON);
+			glLineWidth(10);
+			glColor3f(0.4 , 0.4 , 0.4);
+			glVertex3f(-10, 60, 100);
+			glVertex3f(-8, 75, 95);
+			glVertex3f(-6, 95, 100);
+			glVertex3f(-6, 95, 120);
+			glVertex3f(-8, 75, 125);
+			glVertex3f(-10, 60, 120);
+			glEnd();
+	//controlPart
+			//top
+			glBegin(GL_POLYGON);
+			glColor3f(0.5 , 0.5 , 0.5);
+			glVertex3f(-40, 70, 129);	glVertex3f(-40, 70, 91);
+			glVertex3f(-49, 80, 91);		glVertex3f(-49, 80, 129);
+			glEnd();
+			//FRONTcover
+			glBegin(GL_QUADS);
+			glColor3f(0.4 , 0.4 , 0.4);
+			glVertex3f(-49, 80, 91);
+			glVertex3f(-49, 80, 129);
+			glVertex3f(-49, 35, 129);
+			glVertex3f(-49, 35, 91);
+			//backCover
+			glVertex3f(-40, 70, 91);
+			glVertex3f(-40, 70, 129);
+			glVertex3f(-40, 35, 129);
+			glVertex3f(-40, 35, 91);
+			//buttons and stuff
+			glColor3f(0.8 , 0 , 0);
+			glVertex3f(-45, 77, 93);
+			glVertex3f(-45, 77, 98);
+			glVertex3f(-42, 73, 98);
+			glVertex3f(-42, 73, 93);
+			//
+			glColor3f(0.1 , 0.8 , 0);
+			glVertex3f(-45, 77, 100);
+			glVertex3f(-45, 77, 105);
+			glVertex3f(-42, 73, 105);
+			glVertex3f(-42, 73, 100);
+			glColor3f(0.1 , 0.8 , 0);
+			//
+			glColor3f(0 , 0 , 0.8);
+			glVertex3f(-45, 77, 107);
+			glVertex3f(-45, 77, 112);
+			glVertex3f(-42, 73, 112);
+			glVertex3f(-42, 73, 107);
+			//
+			glColor3f(0.8 , 0 , 0.8);
+			glVertex3f(-45, 77, 114);
+			glVertex3f(-45, 77, 119);
+			glVertex3f(-42, 73, 119);
+			glVertex3f(-42, 73, 114);
+			//
+			glColor3f(0 , 0.8 , 0.8);
+			glVertex3f(-45, 77, 121);
+			glVertex3f(-45, 77, 126);
+			glVertex3f(-42, 73, 126);
+			glVertex3f(-42, 73, 121);
+			glEnd();
+			//stick control
+			glBegin(GL_QUADS);glColor3f(0 , 0 , 0);
+			glVertex3f(-30, 77, 93);glVertex3f(-30, 77, 98);
+			glVertex3f(-27, 73, 98);glVertex3f(-27, 73, 93);
+			//front
+			glVertex3f(-30, 77, 93);glVertex3f(-30, 77, 98);
+			glVertex3f(-30, 35, 98);glVertex3f(-30, 35, 93);
+			//back
+			glVertex3f(-27, 73, 93);glVertex3f(-27, 73, 98);
+			glVertex3f(-27, 35, 98);glVertex3f(-27, 35, 93);
+			//side
+			glVertex3f(-30, 77, 93);glVertex3f(-27, 73, 93);
+			glVertex3f(-27, 35, 93);glVertex3f(-30, 35, 93);
+			//side
+			glVertex3f(-30, 77, 98);glVertex3f(-27, 73, 98);
+			glVertex3f(-27, 35, 98);glVertex3f(-30, 35, 98);
+			glEnd();
+//stairs
+			//ladder
+			glBegin(GL_QUADS);glColor3f(0,0,0);
+			glVertex3f(-22, 35.1, 131);glVertex3f(-20, 35.1, 131);
+			glVertex3f(-20, -5, 131);glVertex3f(-22, -5, 131);
+			//ladder2
+			glVertex3f(-37, 35.1, 131);glVertex3f(-35, 35.1, 131);
+			glVertex3f(-35, -5, 131);glVertex3f(-37, -5, 131);
+			glEnd();
+			//stepper
+			glBegin(GL_LINES);glLineWidth(5);glColor3f(0,0,0);
+			glVertex3f(-22, 32, 131);glVertex3f(-37, 32, 131);glEnd();
+			//
+			glBegin(GL_LINES);glLineWidth(5);glColor3f(0,0,0);
+			glVertex3f(-22, 25, 131);glVertex3f(-37, 25, 131);glEnd();
+			//
+			glBegin(GL_LINES);glLineWidth(5);glColor3f(0,0,0);
+			glVertex3f(-22, 15, 131);glVertex3f(-37, 15, 131);glEnd();
+			//
+			glBegin(GL_LINES);glLineWidth(5);glColor3f(0,0,0);
+			glVertex3f(-22, 5, 131);glVertex3f(-37, 5, 131);glEnd();
+			
+
+//glasess
+			//side
+			glBegin(GL_QUADS);glColor4f(0 , 0.8 , 0.8,0.3);
+			glVertex3f(-5, 75, 90);glVertex3f(-45, 75, 90);
+			glVertex3f(-45, 120, 90);glVertex3f(-5, 120, 90);
+			//side		
+			glVertex3f(-5, 75, 130);glVertex3f(-45, 75, 130);
+			glVertex3f(-45, 120, 130);glVertex3f(-5, 120, 130);
+			//front
+			glVertex3f(-50, 75, 95);glVertex3f(-50, 120, 95);
+			glVertex3f(-50, 120, 125);glVertex3f(-50, 75, 125);
+			glEnd();
+			
+}		
+
+
 void display(void)
 {
 	
@@ -1272,6 +1407,7 @@ void display(void)
 	BackWheels();
 	ShredderMachine();
 	GateControl();
+	Extras();
 
 	glPopMatrix();
     glutSwapBuffers();
