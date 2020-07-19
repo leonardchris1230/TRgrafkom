@@ -315,6 +315,14 @@ void TractorMachine(void)
 			glVertex3f(-100, 35, 50);	glVertex3f(-100, 35, 60);
 			glVertex3f(-97, 60, 60);	glVertex3f(-97, 60, 50);
 			glEnd();
+			//lampunya
+			glBegin(GL_QUADS);
+			glColor3f(1 , 0,0);
+			glVertex3f(-99.2, 50, 93);
+			glVertex3f(-99.2, 50, 98);
+			glVertex3f(-100.2, 40, 98);
+			glVertex3f(-100.2, 40, 93);
+			glEnd();
 			//sampinglampukanan
 			glBegin(GL_POLYGON);
 			glColor3f(0.7 , 0.6 , 0.3);
@@ -338,6 +346,14 @@ void TractorMachine(void)
 			glColor3f(0.7 , 0.6 , 0.1);
 			glVertex3f(-100, 35, 90);		glVertex3f(-100, 35, 100);
 			glVertex3f(-97, 60, 100);		glVertex3f(-97, 60, 90);
+			glEnd();
+			//lampunya
+			glBegin(GL_QUADS);
+			glColor3f(1 , 0,0);
+			glVertex3f(-99.2, 50, 53);
+			glVertex3f(-99.2, 50, 58);
+			glVertex3f(-100.2, 40, 58);
+			glVertex3f(-100.2, 40, 53);
 			glEnd();
 			//sampinglampu2
 			glBegin(GL_POLYGON);
@@ -418,6 +434,31 @@ void SideMachine(void)
 			glVertex3f(0, 50, 0);		glVertex3f(0, 50, 59.9);
 			glEnd();
 
+			//front
+			glBegin(GL_QUADS);
+			glColor3f(0.1,0.1,0.1);
+			glVertex3f(20, 70, 30 );
+			glVertex3f(20, 140, 30);
+			glVertex3f(20, 140, 40);	
+			glVertex3f(20, 70, 40);
+			//back
+			glColor3f(0.1,0.1,0.1);
+			glVertex3f(30, 70, 30 );
+			glVertex3f(30, 130, 30);
+			glVertex3f(30, 130, 40);	
+			glVertex3f(30, 70, 40);
+			//sides
+			glColor3f(0,0,0);
+			glVertex3f(20, 70, 30 );
+			glVertex3f(20, 140, 30);
+			glVertex3f(30, 130, 30);	
+			glVertex3f(30, 70, 30);
+			glColor3f(0,0,0);
+			glVertex3f(20, 70, 40 );
+			glVertex3f(20, 140, 40);
+			glVertex3f(30, 130, 40);	
+			glVertex3f(30, 70, 40);
+			glEnd();
 
 }
 void frontWheels(void)
@@ -799,6 +840,50 @@ void ShredderMachine(void)
 			glVertex3f(340, 115, 50);	
 			glVertex3f(330, 120, 50);
 			glEnd();
+	//lampu belakang
+			glBegin(GL_QUADS);
+			glColor3f(1 , 0,0);
+			glVertex3f(350.2, 50, 80);
+			glVertex3f(350.2, 50, 85);
+			glVertex3f(350.2, 40, 85);
+			glVertex3f(350.2, 40, 80);
+			
+			glVertex3f(350.2, 50, 45);
+			glVertex3f(350.2, 50, 50);
+			glVertex3f(350.2, 40, 50);
+			glVertex3f(350.2, 40, 45);
+			glEnd();
+
+	//pusher
+			glBegin(GL_QUADS);
+			glColor3f(0.3,0.3,0.3);
+			glVertex3f(325, 40, 80);
+			glVertex3f(270, 40, 80);
+			glVertex3f(270, 30, 80);
+			glVertex3f(325, 30, 80);
+			glColor3f(0.3,0.3,0.3);
+			glVertex3f(325, 40, 85);
+			glVertex3f(270, 40, 85);
+			glVertex3f(270, 30, 85);
+			glVertex3f(325, 30, 85);
+			
+			glVertex3f(325, 40, 45);
+			glVertex3f(270, 40, 45);
+			glVertex3f(270, 30, 45);
+			glVertex3f(325, 30, 45);
+			glVertex3f(325, 40, 50);
+			glVertex3f(270, 40, 50);
+			glVertex3f(270, 30, 50);
+			glVertex3f(325, 30, 50);
+
+			glColor3f(0.81 , 0.71 , 0.0);
+			glVertex3f(270, 30, 0.1);
+			glVertex3f(270, 40, 0.1);
+			glVertex3f(270, 40, 129.9);
+			glVertex3f(270, 30, 129.9);
+			glEnd();
+	
+
 /////////////////////////////////////////
 //
 //
@@ -1366,6 +1451,27 @@ void Extras(void)
 			glBegin(GL_LINES);glLineWidth(5);glColor3f(0,0,0);
 			glVertex3f(-22, 5, 131);glVertex3f(-37, 5, 131);glEnd();
 			
+//danger mark
+			
+			glBegin(GL_POLYGON);
+			glColor3f(0.81 , 0.7 , 0.0);
+			glVertex3f(-170, 0, 120);
+			glVertex3f(-170, 0, 165);
+			glVertex3f(-168, 40, 145);
+			glEnd();
+			glBegin(GL_LINES);
+			glColor3f(0,0,0);
+			glLineWidth(20);
+			glVertex3f(-168, 40, 145);
+			glVertex3f(-162, -15, 145);
+			glVertex3f(-162, -15, 145);
+			glVertex3f(-170, -15, 165);
+			glVertex3f(-170, -15, 165);
+			glVertex3f(-170, -15, 120);
+			glVertex3f(-170, -15, 120);
+			glVertex3f(-162, -15, 145);
+
+			glEnd();
 
 //glasess
 			//side
@@ -1394,6 +1500,53 @@ void display(void)
 	glPushMatrix();
 	glRotatef(xrot, 1, 0, 0);
     glRotatef(yrot, 0, 1, 0);
+	//jalan
+	glBegin(GL_QUADS);
+	glColor3f(0.4 , 0.4 , 0.4);
+	glVertex3f(-400, -15.1, -50);glVertex3f(600, -15.1, -50);
+	glVertex3f(600, -15.1, 200);glVertex3f(-400, -15.1, 200);
+	//garis marka
+	
+	glColor3f(1 , 1 , 1);
+	glVertex3f(-400, -15, 70);glVertex3f(-350, -15, 70);
+	glVertex3f(-350, -15, 90);glVertex3f(-400, -15, 90);
+
+	glColor3f(1 , 1 , 1);
+	glVertex3f(-300, -15, 70);glVertex3f(-250, -15, 70);
+	glVertex3f(-250, -15, 90);glVertex3f(-300, -15, 90);
+
+	glColor3f(1 , 1 , 1);
+	glVertex3f(-200, -15, 70);glVertex3f(-150, -15, 70);
+	glVertex3f(-150, -15, 90);glVertex3f(-200, -15, 90);
+
+	glColor3f(1 , 1 , 1);
+	glVertex3f(-100, -15, 70);glVertex3f(-50, -15, 70);
+	glVertex3f(-50, -15, 90);	glVertex3f(-100, -15, 90);
+	
+	glColor3f(1 , 1 , 1);
+	glVertex3f(0, -15, 70);glVertex3f(50, -15, 70);
+	glVertex3f(50, -15, 90);glVertex3f(0, -15, 90);
+
+		glColor3f(1 , 1 , 1);
+	glVertex3f(100, -15, 70);glVertex3f(150, -15, 70);
+	glVertex3f(150, -15, 90);glVertex3f(100, -15, 90);
+
+		glColor3f(1 , 1 , 1);
+	glVertex3f(200, -15, 70);	glVertex3f(250, -15, 70);
+	glVertex3f(250, -15, 90);	glVertex3f(200, -15, 90);
+
+	glColor3f(1 , 1 , 1);
+	glVertex3f(300, -15, 70);	glVertex3f(350, -15, 70);
+	glVertex3f(350, -15, 90);	glVertex3f(300, -15, 90);
+
+	glColor3f(1 , 1 , 1);
+	glVertex3f(400, -15, 70);	glVertex3f(450, -15, 70);
+	glVertex3f(450, -15, 90);	glVertex3f(400, -15, 90);
+	
+	glColor3f(1 , 1 , 1);
+	glVertex3f(500, -15, 70);	glVertex3f(550, -15, 70);
+	glVertex3f(550, -15, 90);	glVertex3f(500, -15, 90);
+	glEnd();
 
 
 	//call part func
