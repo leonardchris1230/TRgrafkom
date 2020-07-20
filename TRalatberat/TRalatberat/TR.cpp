@@ -1351,66 +1351,45 @@ void Extras(void)
 			glVertex3f(-10, 60, 100);		glVertex3f(-10, 60, 120);
 			glEnd();
 	//punggung kursi
-			glBegin(GL_POLYGON);
-			glLineWidth(10);
-			glColor3f(0.4 , 0.4 , 0.4);
-			glVertex3f(-10, 60, 100);
-			glVertex3f(-8, 75, 95);
-			glVertex3f(-6, 95, 100);
-			glVertex3f(-6, 95, 120);
-			glVertex3f(-8, 75, 125);
-			glVertex3f(-10, 60, 120);
-			glEnd();
+			glBegin(GL_POLYGON);glLineWidth(10);glColor3f(0.4 , 0.4 , 0.4);
+			glVertex3f(-10, 60, 100);glVertex3f(-8, 75, 95);
+			glVertex3f(-6, 95, 100);glVertex3f(-6, 95, 120);
+			glVertex3f(-8, 75, 125);glVertex3f(-10, 60, 120);glEnd();
 	//controlPart
 			//top
 			glBegin(GL_POLYGON);
 			glColor3f(0.5 , 0.5 , 0.5);
 			glVertex3f(-40, 70, 129);	glVertex3f(-40, 70, 91);
-			glVertex3f(-49, 80, 91);		glVertex3f(-49, 80, 129);
+			glVertex3f(-49, 80, 91);	glVertex3f(-49, 80, 129);
 			glEnd();
 			//FRONTcover
 			glBegin(GL_QUADS);
 			glColor3f(0.4 , 0.4 , 0.4);
-			glVertex3f(-49, 80, 91);
-			glVertex3f(-49, 80, 129);
-			glVertex3f(-49, 35, 129);
-			glVertex3f(-49, 35, 91);
+			glVertex3f(-49, 80, 91);glVertex3f(-49, 80, 129);
+			glVertex3f(-49, 35, 129);glVertex3f(-49, 35, 91);
 			//backCover
-			glVertex3f(-40, 70, 91);
-			glVertex3f(-40, 70, 129);
-			glVertex3f(-40, 35, 129);
-			glVertex3f(-40, 35, 91);
+			glVertex3f(-40, 70, 91);glVertex3f(-40, 70, 129);
+			glVertex3f(-40, 35, 129);glVertex3f(-40, 35, 91);
 			//buttons and stuff
 			glColor3f(0.8 , 0 , 0);
-			glVertex3f(-45, 77, 93);
-			glVertex3f(-45, 77, 98);
-			glVertex3f(-42, 73, 98);
-			glVertex3f(-42, 73, 93);
+			glVertex3f(-45, 77, 93);glVertex3f(-45, 77, 98);
+			glVertex3f(-42, 73, 98);glVertex3f(-42, 73, 93);
 			//
 			glColor3f(0.1 , 0.8 , 0);
-			glVertex3f(-45, 77, 100);
-			glVertex3f(-45, 77, 105);
-			glVertex3f(-42, 73, 105);
-			glVertex3f(-42, 73, 100);
-			glColor3f(0.1 , 0.8 , 0);
+			glVertex3f(-45, 77, 100);glVertex3f(-45, 77, 105);
+			glVertex3f(-42, 73, 105);glVertex3f(-42, 73, 100);
 			//
 			glColor3f(0 , 0 , 0.8);
-			glVertex3f(-45, 77, 107);
-			glVertex3f(-45, 77, 112);
-			glVertex3f(-42, 73, 112);
-			glVertex3f(-42, 73, 107);
+			glVertex3f(-45, 77, 107);glVertex3f(-45, 77, 112);
+			glVertex3f(-42, 73, 112);glVertex3f(-42, 73, 107);
 			//
 			glColor3f(0.8 , 0 , 0.8);
-			glVertex3f(-45, 77, 114);
-			glVertex3f(-45, 77, 119);
-			glVertex3f(-42, 73, 119);
-			glVertex3f(-42, 73, 114);
+			glVertex3f(-45, 77, 114);glVertex3f(-45, 77, 119);
+			glVertex3f(-42, 73, 119);glVertex3f(-42, 73, 114);
 			//
 			glColor3f(0 , 0.8 , 0.8);
-			glVertex3f(-45, 77, 121);
-			glVertex3f(-45, 77, 126);
-			glVertex3f(-42, 73, 126);
-			glVertex3f(-42, 73, 121);
+			glVertex3f(-45, 77, 121);glVertex3f(-45, 77, 126);
+			glVertex3f(-42, 73, 126);glVertex3f(-42, 73, 121);
 			glEnd();
 			//stick control
 			glBegin(GL_QUADS);glColor3f(0 , 0 , 0);
@@ -1454,25 +1433,98 @@ void Extras(void)
 //danger mark
 			
 			glBegin(GL_POLYGON);
-			glColor3f(0.81 , 0.7 , 0.0);
-			glVertex3f(-170, 0, 120);
-			glVertex3f(-170, 0, 165);
-			glVertex3f(-168, 40, 145);
+			glColor3f(0.81 , 0.6 , 0.0);
+			glVertex3f(-170, 0, 120);glVertex3f(-170, 0, 165);
+			glVertex3f(-168, 50, 145);glEnd();
+			glBegin(GL_LINES);glColor3f(0,0,0);glLineWidth(20);
+			glVertex3f(-168, 50, 145);glVertex3f(-162, -15, 145);
+			glVertex3f(-162, -15, 145);glVertex3f(-170, -15, 165);
+			glVertex3f(-170, -15, 165);glVertex3f(-170, -15, 120);
+			glVertex3f(-170, -15, 120);glVertex3f(-162, -15, 145);
 			glEnd();
-			glBegin(GL_LINES);
+
+			glBegin(GL_QUADS);
 			glColor3f(0,0,0);
-			glLineWidth(20);
-			glVertex3f(-168, 40, 145);
-			glVertex3f(-162, -15, 145);
-			glVertex3f(-162, -15, 145);
-			glVertex3f(-170, -15, 165);
-			glVertex3f(-170, -15, 165);
-			glVertex3f(-170, -15, 120);
-			glVertex3f(-170, -15, 120);
-			glVertex3f(-162, -15, 145);
+			glVertex3f(-170.1,15, 141);glVertex3f(-170.1, 15, 147);
+			glVertex3f(-168.1, 45, 147);glVertex3f(-168.1, 45, 142);
+
+			glVertex3f(-170,5, 141);glVertex3f(-170, 5, 147);
+			glVertex3f(-170, 10, 147);glVertex3f(-170, 10, 142);
+			glEnd();
+//gasolinetank
+			
+
+			//mark
+			glBegin(GL_LINES);	glLineWidth(40);
+			glColor3f(1,1,1);
+			glVertex3f(10,70, 100.1);glVertex3f(40, 120, 100.1);
+			glVertex3f(40, 70, 100.1);glVertex3f(10, 120, 100.1);glEnd();
+			glBegin(GL_QUADS);
+			//backNfront
+			glColor3f(0.8,0,0);
+			glVertex3f(10,50, 91);glVertex3f(40, 50, 91);
+			glVertex3f(40, 120, 91);glVertex3f(10, 120, 91);
+			//
+			glVertex3f(10,50, 100);glVertex3f(40, 50, 100);
+			glVertex3f(40, 120, 100);glVertex3f(10, 120, 100);
+			//sides
+			glColor3f(0.9,0,0);
+			glVertex3f(10,50, 91);glVertex3f(10,50, 100);
+			glVertex3f(10, 120, 100);glVertex3f(10, 120, 91);
+			//sides
+			glColor3f(0.9,0,0);
+			glVertex3f(40,50, 91);glVertex3f(40,50, 100);
+			glVertex3f(40, 120, 100);glVertex3f(40, 120, 91);
+			//top
+			glColor3f(0.99,0,0);
+			glVertex3f(20,120, 91);glVertex3f(20,120, 100);
+			glVertex3f(40, 120, 100);glVertex3f(40, 120, 91);
+			//tutup
+			glColor3f(0.8,0,0);
+			glVertex3f(10,120, 91);glVertex3f(10,120, 100);
+			glVertex3f(10, 130, 100);glVertex3f(10, 130, 91);
+			
+			//
+			glColor3f(0.8,0,0);
+			glVertex3f(20,120, 91);	glVertex3f(20,120, 100);
+			glVertex3f(20, 130, 100);glVertex3f(20, 130, 91);
+			
+			//
+			glColor3f(0.9,0,0);
+			glVertex3f(10,120, 100);glVertex3f(20,120, 100);
+			glVertex3f(20, 130, 100);glVertex3f(10, 130, 100);
+			
+			//
+			glColor3f(0.9,0,0);
+			glVertex3f(10,120, 91);	glVertex3f(20,120, 91);
+			glVertex3f(20, 130, 91);glVertex3f(10, 130, 91);
+			//
+			glColor3f(0.5,0,0);
+			glVertex3f(10,130, 91);	glVertex3f(20,130, 91);
+			glVertex3f(20, 130, 100);glVertex3f(10, 130, 100);
+			glEnd();
+//crumbs
+			glBegin(GL_QUADS);
+			glColor3f(0,0,0);
+			for(int i=0;i<=5;i++)
+			{
+			glVertex3f(230+i,10, 10);glVertex3f(230+i,10, 120);
+			glVertex3f(250+i, 40, 120);glVertex3f(250+i, 40, 10);
+			}
+
+			for(int i=0;i<=5;i++)
+			{
+			glColor3f(0.1,0.1,0.1);
+			glVertex3f(180,10+i, 10);glVertex3f(180,10+i, 120);
+			glVertex3f(250, 12+i, 120);glVertex3f(250, 12+i, 10);
+			}
+			glColor3f(1 , 1 , 1);
+			glVertex3f(200, 18, 70);	glVertex3f(250, 18, 70);
+			glVertex3f(250, 18, 90);	glVertex3f(200, 18, 90);
 
 			glEnd();
 
+			
 //glasess
 			//side
 			glBegin(GL_QUADS);glColor4f(0 , 0.8 , 0.8,0.3);
@@ -1500,6 +1552,7 @@ void display(void)
 	glPushMatrix();
 	glRotatef(xrot, 1, 0, 0);
     glRotatef(yrot, 0, 1, 0);
+
 	//jalan
 	glBegin(GL_QUADS);
 	glColor3f(0.4 , 0.4 , 0.4);
@@ -1531,7 +1584,7 @@ void display(void)
 	glVertex3f(100, -15, 70);glVertex3f(150, -15, 70);
 	glVertex3f(150, -15, 90);glVertex3f(100, -15, 90);
 
-		glColor3f(1 , 1 , 1);
+	glColor3f(1 , 1 , 1);
 	glVertex3f(200, -15, 70);	glVertex3f(250, -15, 70);
 	glVertex3f(250, -15, 90);	glVertex3f(200, -15, 90);
 
