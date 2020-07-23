@@ -652,7 +652,7 @@ void BackWheels(void)
 {
 //bankiri 
 			//ban
-					for(int i =0 ;i<50;i++)
+					for(int i =0 ;i<45;i++)
 					{
 					glBegin(GL_POLYGON);
 					glColor3f(0.1 , 0.1 , 0.1);
