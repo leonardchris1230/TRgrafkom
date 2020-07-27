@@ -20,6 +20,7 @@ void TractorMachineExtensions(void);
 void ShredderMachine(void);
 void GateControl(void);
 void Extras(void);
+void land(void);
 
 void Myinit(void);
 void display(void);
@@ -96,6 +97,8 @@ void keyboard(unsigned char key, int x, int y)
     case 'S':
         glTranslatef(0.0, -3.0, 0.0);
         break;
+	case 27:
+		exit(0);
     case 'a':
     case 'A':
         glTranslatef(-3.0, 0.0, 0.0);
@@ -1342,6 +1345,42 @@ void GateControl(void)
 				glVertex3f(75, 80, -5);
 				glEnd();
 }
+void land(void)
+{
+	glBegin(GL_QUADS);
+	glColor3f( 0.576471, 0.858824, 0.439216);
+	glVertex3f(-400, -15.2, -250);
+	glVertex3f(600, -15.2, -250);
+	glVertex3f(600, -15.2, 350);
+	glVertex3f(-400, -15.2, 350);
+	//
+	glVertex3f(-400, -60, -250);
+	glVertex3f(600, -60, -250);
+	glVertex3f(600, -60, 350);
+	glVertex3f(-400, -60, 350);
+	//
+	glColor3f(0.419608, 0.556863, 0.137255);
+	glVertex3f(600, -15.2, -250);
+	glVertex3f(600, -60, -250);
+	glVertex3f(600, -60, 350);
+	glVertex3f(600, -15.2, 350);
+	//
+	glVertex3f(-400, -15.2, -250);
+	glVertex3f(-400, -60, -250);
+	glVertex3f(-400, -60, 350);
+	glVertex3f(-400, -15.2, 350);
+	//
+	glVertex3f(-400, -15.2, -250);
+	glVertex3f(-400, -60, -250);
+	glVertex3f(600, -60, -250);
+	glVertex3f(600, -15.2, -250);
+	//
+	glVertex3f(-400, -15.2, 350);
+	glVertex3f(-400, -60, 350);
+	glVertex3f(600, -60, 350);
+	glVertex3f(600, -15.2, 350);
+	glEnd();
+}
 void Extras(void)
 {
 	//dasar kursi
@@ -1451,9 +1490,8 @@ void Extras(void)
 			glVertex3f(-170,5, 141);glVertex3f(-170, 5, 147);
 			glVertex3f(-170, 10, 147);glVertex3f(-170, 10, 142);
 			glEnd();
-//gasolinetank
-			
 
+//gasolinetank
 			//mark
 			glBegin(GL_LINES);	glLineWidth(40);
 			glColor3f(1,1,1);
@@ -1523,6 +1561,246 @@ void Extras(void)
 			glVertex3f(250, 18, 90);	glVertex3f(200, 18, 90);
 
 			glEnd();
+//bus stop?
+			glBegin(GL_QUADS);
+	
+			//
+			//
+			//left stick
+			//
+			//
+			glColor3f(0.372549, 0.623529, 0.623529);
+			glVertex3f(-350, -15.1, -90);
+			glVertex3f(-340, -15.1, -90);
+			glVertex3f(-340, 150, -90);
+			glVertex3f(-350, 150, -90);
+			//
+			glColor3f(0.372549, 0.623529, 0.623529);
+			glVertex3f(-350, -15.1, -95);
+			glVertex3f(-340, -15.1, -95);
+			glVertex3f(-340, 150, -95);
+			glVertex3f(-350, 150, -95);
+			//
+			glColor3f(0.272549, 0.523529, 0.523529);
+			glVertex3f(-350, -15.1, -90);
+			glVertex3f(-350, -15.1, -95);
+			glVertex3f(-350, 150, -95);
+			glVertex3f(-350, 150, -90);
+			//
+			glColor3f(0.272549, 0.523529, 0.523529);
+			glVertex3f(-340, -15.1, -90);
+			glVertex3f(-340, -15.1, -95);
+			glVertex3f(-340, 150, -95);
+			glVertex3f(-340, 150, -90);
+			glEnd();
+
+			glBegin(GL_QUADS);
+	
+			//
+			//
+			// small left stick
+			//
+			//
+			glColor3f(0.372549, 0.623529, 0.623529);
+			glVertex3f(-350, -15.1, -250);
+			glVertex3f(-340, -15.1, -250);
+			glVertex3f(-340, 120, -250);
+			glVertex3f(-350, 120, -250);
+			//
+			glColor3f(0.372549, 0.623529, 0.623529);
+			glVertex3f(-350, -15.1, -245);
+			glVertex3f(-340, -15.1, -245);
+			glVertex3f(-340, 120, -245);
+			glVertex3f(-350, 120, -245);
+			//
+			glColor3f(0.272549, 0.523529, 0.523529);
+			glVertex3f(-350, -15.1, -250);
+			glVertex3f(-350, -15.1, -245);
+			glVertex3f(-350, 120, -245);
+			glVertex3f(-350, 120, -250);
+			//
+			glColor3f(0.272549, 0.523529, 0.523529);
+			glVertex3f(-340, -15.1, -250);
+			glVertex3f(-340, -15.1, -245);
+			glVertex3f(-340, 120, -245);
+			glVertex3f(-340, 120, -250);
+			glEnd();
+
+			glBegin(GL_QUADS);
+			//
+			//
+			//right stick
+			//
+			//
+			glColor3f(0.372549, 0.623529, 0.623529);
+			glVertex3f(-150, -15.1, -90);
+			glVertex3f(-140, -15.1, -90);
+			glVertex3f(-140, 150, -90);
+			glVertex3f(-150, 150, -90);
+			//
+			glColor3f(0.372549, 0.623529, 0.623529);
+			glVertex3f(-150, -15.1, -95);
+			glVertex3f(-140, -15.1, -95);
+			glVertex3f(-140, 150, -95);
+			glVertex3f(-150, 150, -95);
+			//
+			glColor3f(0.272549, 0.523529, 0.523529);
+			glVertex3f(-150, -15.1, -90);
+			glVertex3f(-150, -15.1, -95);
+			glVertex3f(-150, 150, -95);
+			glVertex3f(-150, 150, -90);
+			//
+			glColor3f(0.272549, 0.523529, 0.523529);
+			glVertex3f(-140, -15.1, -90);
+			glVertex3f(-140, -15.1, -95);
+			glVertex3f(-140, 150, -95);
+			glVertex3f(-140, 150, -90);
+			glEnd();
+
+			glBegin(GL_QUADS);
+			//
+			//
+			// small right stick
+			//
+			//
+			glColor3f(0.372549, 0.623529, 0.623529);
+			glVertex3f(-150, -15.1, -250);
+			glVertex3f(-140, -15.1, -250);
+			glVertex3f(-140, 120, -250);
+			glVertex3f(-150, 120, -250);
+			//
+			glColor3f(0.372549, 0.623529, 0.623529);
+			glVertex3f(-150, -15.1, -245);
+			glVertex3f(-140, -15.1, -245);
+			glVertex3f(-140, 120, -245);
+			glVertex3f(-150, 120, -245);
+			//
+			glColor3f(0.272549, 0.523529, 0.523529);
+			glVertex3f(-150, -15.1, -250);
+			glVertex3f(-150, -15.1, -245);
+			glVertex3f(-150, 120, -245);
+			glVertex3f(-150, 120, -250);
+			//
+			glColor3f(0.272549, 0.523529, 0.523529);
+			glVertex3f(-140, -15.1, -250);
+			glVertex3f(-140, -15.1, -245);
+			glVertex3f(-140, 120, -245);
+			glVertex3f(-140, 120, -250);
+			glEnd();
+	//LILROOF
+			//bottom
+			glBegin(GL_QUADS);
+			glColor3f(0.809804, 0.384314, 0.384314);
+			glVertex3f(-360, 150, -80);
+			glVertex3f(-130, 150, -80);
+			glVertex3f(-130, 120, -250);
+			glVertex3f(-360, 120, -250);
+			//top
+			glVertex3f(-360, 170, -80);
+			glVertex3f(-130, 170, -80);
+			glVertex3f(-130, 140, -250);
+			glVertex3f(-360, 140, -250);
+			//frontsides
+			glColor3f(0.909804, 0.484314, 0.384314);
+			glVertex3f(-360, 150, -80);
+			glVertex3f(-130, 150, -80);
+			glVertex3f(-130, 170, -80);
+			glVertex3f(-360, 170, -80);
+			//backside
+			glColor3f(0.909804, 0.484314, 0.384314);
+			glVertex3f(-360, 120, -250);
+			glVertex3f(-130, 120, -250);
+			glVertex3f(-130, 140, -250);
+			glVertex3f(-360, 140, -250);
+			//leftside
+			glColor3f(0.809804, 0.384314, 0.284314);
+			glVertex3f(-130, 170, -80);
+			glVertex3f(-130, 150, -80);
+			glVertex3f(-130, 120, -250);
+			glVertex3f(-130, 140, -250);
+			glEnd();
+			//rightside
+			glColor3f(0.809804, 0.384314, 0.284314);
+			glVertex3f(-130, 170, -80);
+			glVertex3f(-130, 150, -80);
+			glVertex3f(-130, 120, -250);
+			glVertex3f(-130, 140, -250);
+
+	//bench
+			glBegin(GL_QUADS);
+			//
+			//
+			//left stick
+			//
+			//
+			glColor3f(0.372549, 0.623529, 0.623529);
+			glVertex3f(-350, -15.1, -175);
+			glVertex3f(-340, -15.1, -175);
+			glVertex3f(-340, 40, -175);
+			glVertex3f(-350, 40, -175);
+			//
+			glColor3f(0.372549, 0.623529, 0.623529);
+			glVertex3f(-350, -15.1, -180);
+			glVertex3f(-340, -15.1, -180);
+			glVertex3f(-340, 40, -180);
+			glVertex3f(-350, 40, -180);
+			//
+			glColor3f(0.272549, 0.523529, 0.523529);
+			glVertex3f(-350, -15.1, -175);
+			glVertex3f(-350, -15.1, -180);
+			glVertex3f(-350, 40, -180);
+			glVertex3f(-350, 40, -175);
+			//
+			glColor3f(0.272549, 0.523529, 0.523529);
+			glVertex3f(-340, -15.1, -175);
+			glVertex3f(-340, -15.1, -180);
+			glVertex3f(-340, 40, -180);
+			glVertex3f(-340, 40, -175);
+
+			//rightstick
+			glColor3f(0.372549, 0.623529, 0.623529);
+			glVertex3f(-150, -15.1, -180);
+			glVertex3f(-140, -15.1, -180);
+			glVertex3f(-140, 40, -180);
+			glVertex3f(-150, 40, -180);
+			//
+			glColor3f(0.372549, 0.623529, 0.623529);
+			glVertex3f(-150, -15.1, -180);
+			glVertex3f(-140, -15.1, -180);
+			glVertex3f(-140, 40, -180);
+			glVertex3f(-150, 40, -180);
+			//
+			glColor3f(0.272549, 0.523529, 0.523529);
+			glVertex3f(-150, -15.1, -175);
+			glVertex3f(-150, -15.1, -180);
+			glVertex3f(-150, 40, -180);
+			glVertex3f(-150, 40, -175);
+			//
+			glColor3f(0.272549, 0.523529, 0.523529);
+			glVertex3f(-140, -15.1, -175);
+			glVertex3f(-140, -15.1, -180);
+			glVertex3f(-140, 40, -180);
+			glVertex3f(-140, 40, -175);
+			
+		//the bench
+			for (int i= 0 ;i<=5;i++)
+			{
+			glColor3f(0.809804, 0.384314, 0.384314);
+			glVertex3f(-360, 40.1+i, -160);
+			glVertex3f(-360, 40.1+i, -195);
+			glVertex3f(-130, 40.1+i, -195);
+			glVertex3f(-130, 40.1+i, -160);
+			}
+		//backcover
+			glColor3f(0.709804, 0.284314, 0.284314);
+			glVertex3f(-350, 20, -247);
+			glVertex3f(-350, 100, -247);
+			glVertex3f(-140, 100, -247);
+			glVertex3f(-140, 20, -247);
+			glEnd();
+
+
+
 
 			
 //glasess
@@ -1603,6 +1881,7 @@ void display(void)
 
 
 	//call part func
+	land();
 	frontBody();
 	ControlCenter();
 	TractorMachine();
